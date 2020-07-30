@@ -30,8 +30,10 @@ export default async function createPost(position, whatItIs, whatItIsNot) {
       what_it_is: whatItIs,
       what_it_is_not: whatItIsNot,
     };
-    const data = await db('posts').insert(record);
-    return data;
+    const data = await db('posts').insert(record).returning('id');
+    return {
+      id: data[0],
+    };
   } catch (err) {
     throw err;
   }

@@ -3,12 +3,15 @@ import createPost from 'actions/create-post';
 
 export default async (req, res) => {
   try {
+    console.log('correct route');
     if (req.method === 'GET') {
       const response = getAllPosts();
       console.log({ response });
       return res.send(response);
     } else if (req.method === 'POST') {
-      const response = createPost(
+      console.log('correct method');
+      console.log({ body: req.body });
+      const response = await createPost(
         req.body.position,
         req.body.whatItIs,
         req.body.whatItsNot
