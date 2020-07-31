@@ -25,7 +25,7 @@ export default function HomeTabs({ tab, setTab }) {
         <li className="tab-item">
           <Link href="/new">
             <a href="" className={classNames(TABS.NEW)}>
-              New
+              Recent
             </a>
           </Link>
         </li>
