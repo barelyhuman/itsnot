@@ -13,7 +13,8 @@ export default async function downvotePost(postId) {
 
     const data = await db('posts')
       .where('id', '=', postId)
-      .decrement('downvotes', 1)
+      .increment('downvotes', 1)
+      .decrement('votes', 1)
       .returning('id');
 
     return data;

@@ -6,6 +6,8 @@ import Textarea from 'components/textarea';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Page from 'components/page';
+import MediumEditor from 'medium-editor';
+import Editor from 'components/editor';
 
 export default function AddPost() {
   const [position, setPosition] = useState('');
@@ -50,21 +52,15 @@ export default function AddPost() {
           onKeyUp={(e) => setPosition(e.target.value)}
         ></Input>
         <Spacer y={1}></Spacer>
-        <Textarea
+        <Editor
           placeholder="What It is"
-          onKeyUp={(e) => setWhatItIs(e.target.value)}
-          resize="none"
-          rows={10}
-          cols={50}
-        ></Textarea>
+          onChange={(e) => setWhatItIs(e)}
+        ></Editor>
         <Spacer y={1}></Spacer>
-        <Textarea
-          placeholder="What Its not"
-          onKeyUp={(e) => setWhatItsNot(e.target.value)}
-          resize="none"
-          rows={10}
-          cols={50}
-        ></Textarea>
+        <Editor
+          placeholder="What It's not"
+          onChange={(e) => setWhatItsNot(e)}
+        ></Editor>
         <Spacer y={1}></Spacer>
         <Button onClick={handleSubmit}>Submit</Button>
       </Page>

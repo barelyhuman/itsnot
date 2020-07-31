@@ -6,7 +6,7 @@ export default async function getHotPosts(offset = 0, limit = 10) {
 
     const data = await db('posts')
       .where({})
-      .orderBy('upvotes', 'desc')
+      .orderBy('votes', 'desc')
       .offset(offset)
       .limit(limit);
 

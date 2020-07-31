@@ -77,10 +77,18 @@ export default function NewPage() {
                     <Padding all={1}>
                       <h3>{postItem.position}</h3>
                       <h4>What it is?</h4>
-                      <article>{postItem.what_it_is}</article>
+                      <article
+                        dangerouslySetInnerHTML={{
+                          __html: postItem.what_it_is,
+                        }}
+                      ></article>
                       <br />
                       <h4>What it's not?</h4>
-                      <article>{postItem.what_it_is_not}</article>
+                      <article
+                        dangerouslySetInnerHTML={{
+                          __html: postItem.what_it_is_not,
+                        }}
+                      ></article>
                       <Spacer y={1} />
                       <Button onClick={(e) => upvotePost(postItem.id)}>
                         {' '}

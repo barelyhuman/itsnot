@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prestart": "npm run db:migrate",
+    "prestart": "npm run NODE_ENV='production' db:migrate",
     "start": "next start -p $PORT",
-    "db:migrate": "NODE_ENV='production' knex migrate:latest"
+    "db:migrate": "knex migrate:latest"
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "knex": "^0.21.2",
+    "medium-editor": "^5.23.3",
     "next": "9.5.1",
     "pg": "^8.3.0",
     "react": "16.13.1",
