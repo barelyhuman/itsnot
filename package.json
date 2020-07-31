@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "prestart": "npm run db:migrate",
+    "start": "next start -p $PORT",
+    "db:migrate": "NODE_ENV='production' knex migrate:latest"
   },
   "dependencies": {
     "classnames": "^2.2.6",
