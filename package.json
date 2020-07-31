@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prestart": "npm run NODE_ENV='production' db:migrate",
+    "prestart": "NODE_ENV='production' npm run db:migrate",
     "start": "next start -p $PORT",
     "db:migrate": "knex migrate:latest"
   },
