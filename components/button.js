@@ -1,7 +1,12 @@
-export default function Button({ children, ...props }) {
+import cn from 'classnames';
+
+export default function Button({ children, secondary, ...props }) {
+  const classnames = cn({ secondary });
   return (
     <>
-      <button {...props}>{children}</button>
+      <button className={classnames} {...props}>
+        {children}
+      </button>
       <style jsx>{`
         button {
           background: #000;
@@ -21,6 +26,17 @@ export default function Button({ children, ...props }) {
           outline: #000;
           color: #000;
           background: #fff;
+        }
+
+        button.secondary {
+          background: #fff;
+          color: #666;
+          border-color: rgba(12, 12, 13, 0.1);
+        }
+
+        button.secondary:hover {
+          border-color: #000;
+          color: #000;
         }
       `}</style>
     </>

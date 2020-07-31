@@ -1,11 +1,10 @@
-import errorHandler from 'lib/error-handler';
 import downvotePost from 'actions/downvote-post';
+import errorHandler from 'lib/error-handler';
 
 export default async (req, res) => {
   try {
     if (req.method === 'POST') {
-      const response = downvotePost(req.body.id);
-      console.log({ response });
+      const response = await downvotePost(req.body.id);
       return res.send(response);
     }
 

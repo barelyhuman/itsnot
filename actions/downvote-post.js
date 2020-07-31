@@ -11,7 +11,7 @@ export default async function downvotePost(postId) {
       };
     }
 
-    const data = await db('post')
+    const data = await db('posts')
       .where('id', '=', postId)
       .decrement('downvotes', 1)
       .returning('id');

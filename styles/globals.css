@@ -14,3 +14,8 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.text-group * {
+  padding: 0px;
+  margin: 0px;
+}

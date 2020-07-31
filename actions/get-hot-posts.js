@@ -10,6 +10,7 @@ export default async function getHotPosts(offset = 0, limit = 10) {
       .offset(offset)
       .limit(limit);
 
+    await db.destroy();
     return data;
   } catch (err) {
     throw err;

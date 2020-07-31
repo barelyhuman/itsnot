@@ -1,5 +1,5 @@
-import errorHandler from 'lib/error-handler';
 import getNewPosts from 'actions/get-new-posts';
+import errorHandler from 'lib/error-handler';
 
 export default async (req, res) => {
   try {

@@ -1,5 +1,5 @@
-import getAllPosts from 'actions/get-all-posts';
 import createPost from 'actions/create-post';
+import getAllPosts from 'actions/get-all-posts';
 
 export default async (req, res) => {
   try {
