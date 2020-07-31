@@ -2,9 +2,9 @@ import Button from 'components/button';
 import Card from 'components/card';
 import HomeTabs, { TABS } from 'components/home-tabs';
 import Padding from 'components/padding';
+import Page from 'components/page';
 import Spacer from 'components/spacer';
 import { useEffect, useState } from 'react';
-import Page from 'components/page';
 
 export default function HotPage() {
   const [posts, setPosts] = useState([]);

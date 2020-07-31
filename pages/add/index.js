@@ -1,13 +1,11 @@
 import Button from 'components/button';
+import Editor from 'components/editor';
 import HomeTabs, { TABS } from 'components/home-tabs';
 import Input from 'components/input';
+import Page from 'components/page';
 import Spacer from 'components/spacer';
-import Textarea from 'components/textarea';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import Page from 'components/page';
-import MediumEditor from 'medium-editor';
-import Editor from 'components/editor';
 
 export default function AddPost() {
   const [position, setPosition] = useState('');

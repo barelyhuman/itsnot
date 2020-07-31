@@ -1,5 +1,4 @@
-import MediumEditor from 'medium-editor';
-import { useRef, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Editor(props) {
   const editor = useRef('');
@@ -8,6 +7,8 @@ export default function Editor(props) {
     if (!editor || !editor.current) {
       return;
     }
+
+    const MediumEditor = require('medium-editor');
 
     const _editor = new MediumEditor(editor.current, {
       placeholder: {
@@ -29,9 +30,11 @@ export default function Editor(props) {
       },
     });
 
-    _editor.subscribe('editableInput', (e) => {
-      props.onChange(_editor.getContent());
-    });
+    if (typeof document !== 'undefined') {
+      _editor.subscribe('editableInput', (e) => {
+        props.onChange(_editor.getContent());
+      });
+    }
   }, [editor]);
 
   function handleChange(e) {
